@@ -1,0 +1,19 @@
+.title-slide{
+  font-size: 2rem !important;
+}
+.firstScreen{
+  height: 50vh;
+  overflow: hidden;
+}
+.contPoint{
+  display: flex;
+  justify-content: center;
+}
+.point{
+  display: inline-block;
+  margin: 0.5em;
+  width: 1.2em;
+  height: 1.2em;
+  background-color: #efeeec;
+  border-radius: 50%;
+}
