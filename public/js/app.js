@@ -1,24 +1,29 @@
 'use strict';
 
-const render = (root,body) =>{
+const render = (root) =>{
   root.empty();
   const wrapper = $('<div class="wrapper"></div>');
-  // if (state.firstScreen == null){
-  // } else {
-  //   wrapper.append(Dashboard());
-  // }
-  // root.before(firstScreen());
-  wrapper.append(firstScreen());
+  if(state.secondScreen == null){
+    wrapper.append(firstScreen(_ => render(root)));
+  } else{
+    wrapper.append(secondScreen());
+  }
   root.append(wrapper);
 }
 
 const state = {
   firstScreen: null,
-  SecondScreen: null
+  secondScreen: null,
+  threeScreen: null
 };
 
 $(_=>{
   const root = $('#root');
   render(root);
-  // state.doRender = render.bind(null, root);
+  readyCarousel();
+
 });
+
+const readyCarousel= _=>{
+  $('.carousel.carousel-slider').carousel({fullWidth: true});
+};
