@@ -1,19 +1,31 @@
-.title-slide{
-  font-size: 2rem !important;
+
+button{
+  background-color: #fbd43b !important;
 }
-.firstScreen{
-  height: 50vh;
-  overflow: hidden;
+.firstScreem{
+  padding-top: 4rem;
 }
-.contPoint{
-  display: flex;
-  justify-content: center;
+.margin-1r{
+  margin-left: 1rem !important;
 }
-.point{
-  display: inline-block;
-  margin: 0.5em;
-  width: 1.2em;
-  height: 1.2em;
-  background-color: #efeeec;
-  border-radius: 50%;
+.carousel{
+  height: 28rem !important;
+}
+.carousel-h1{
+  font-size: 1.7rem !important;
+  font-weight: 700;
+  color: black;
+}
+.carousel-p{
+  color: #8f8f8f;
+  margin: 0 1rem !important;
+}
+.indicator-item{
+  background-color: #f8f8f8 !important;
+}
+.indicator-item.active{
+  background-color: #f64552 !important;
+}
+.btn-firstScreem{
+  margin: auto;
 }

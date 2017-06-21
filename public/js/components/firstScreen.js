@@ -1,61 +1,49 @@
 'use strict';
 
-const firstScreen = _ =>{
-  const container = $('<div class="cantainer-fluid"></div>');
-  const row =  $('<div class="row"></div>');
-  const col=$('<div class="col s12 center-align"></div>');
-  const point = $('<div class="col s6 offset-s3 contPoint"></div>');
-  const point1 =$ ('<div class="point"></div>')
+const firstScreen = (update) =>{
+  const container = $('<div class="container-fluid"></div>');
+  const row = $('<div class="row firstScreem"></div>');
+  const colCarousel = $('<div class="col s12"></div>');
+  const contCarousel = $('<div class="carousel carousel-slider center" data-indicators="true"></div>');
 
-  const button =$('<button class="btn" type="button" name="button">Registrarme</button>');
-  point.append(point1);
-  point1.clone().appendTo(point);
-  point1.clone().appendTo(point);
+  const item1 = $('<div class="carousel-item  white-text" href="#one!"></div>');
+  const img1 = $('<div class="col s8 offset-s2 m6 offset-m3 l4 offset-l4"><img class="responsive-img" src="img/icons/icon-people.png" alt="hombre con guitarra y dos personas felices"></div>');
+  const text1 = $('<div class="col s11 margin-1r"><h1 class="carousel-h1">Paga a tus amigos</h1 class="carousel-h1"><p class="carousel-p">Paga a quien quieras desde donde quieras, sin usar efectivo</p></div>');
 
+  const item2 = $('<div class="carousel-item  white-text" href="#two!"></div>');
+  const img2 = $('<div class="col s8 offset-s2 m6 offset-m3 l4 offset-l4"><img class="responsive-img" src="img/icons/happy-person.png" alt="hombre feliz"></div>');
+  const text2 = $('<div class="col s11 margin-1r"><h1 class="carousel-h1">Sin número de cuenta</h1 class="carousel-h1"><p class="carousel-p">Elige a quién pagar desde tu lista de contactos</p></div>');
 
-  col.append(carousel());
-  col.append(point);
-  col.append(button);
-  row.append(col);
-  container.append(row);
+  const item3 = $('<div class="carousel-item  white-text" href="#three!"></div>');
+  const img3 = $('<div class="col s8 offset-s2 m6 offset-m3 l4 offset-l4"><img class="responsive-img" src="img/icons/group-people.png" alt="personas felices"></div>');
+  const text3 = $('<div class="col s11 margin-1r"><h1 class="carousel-h1">Gratis y Seguro</h1><p class="carousel-p">La transferencia es inmediata y gratuita desde una cuenta a otra</p></div>');
 
-  return container;
-}
+  const button = $('<button class="col s11  btn margin-1r btn-firstScreem" type="button" name="button">Registrarme</button>');
 
-const carousel = _=>{
+  item1.append(img1);
+  item1.append(text1);
 
-  const contCarousel = document.createElement("div");
+  item2.append(img2);
+  item2.append(text2);
 
-  for (var i = 0; i < 3; i++) {
-    const divCont = document.createElement("div");
-    divCont.classList.add("col", "s12");
+  item3.append(img3);
+  item3.append(text3);
 
-    const divImg = document.createElement("div");
-    divImg.classList.add("col", "s12");
-
-    const img=  document.createElement("img");
-    const h1 =  document.createElement("h1");
-    const p = document.createElement("p");
-    if(i==0){
-      img.setAttribute("src", "img/icons/icon-people.png");
-      h1.innerHTML = Paga a tus amigos;
-      p.innerHTML = Paga a quien quieras desde donde quieras, sin usar efectivo;
-    } else if (i==1) {
-      img.setAttribute("src", "img/icons/happy-person.png");
-      h1.innerHTML = Sin número de cuenta;
-      p.innerHTML = Elige a quién pagar desde tu lista de contactos;
-    } else if (i==2) {
-      img.setAttribute("src", "img/icons/group-people.png");
-      h1.innerHTML = Gratis y Seguro;
-      p.innerHTML = La transferencia es inmediata y gratuita desde una cuenta a otra;
-    }
-  }
-
-  divCont.append(divImg);
-
-  contCarousel.append(item0);
   contCarousel.append(item1);
   contCarousel.append(item2);
+  contCarousel.append(item3);
 
-  return contCarousel;
+  colCarousel.append(contCarousel);
+  colCarousel.append(button);
+
+  row.append(colCarousel);
+  container.append(row);
+
+  button.on('click',(e) => {
+    e.preventDefault();
+    state.secondScreen = secondScreen;
+    update();
+  });
+
+  return container;
 }
