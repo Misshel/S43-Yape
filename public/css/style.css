@@ -1,9 +1,16 @@
-
+body,h1,h2,h3,h4,h5,h6,span,input,label,small{
+  font-family: 'Roboto' !important;
+}
 button{
   background-color: #fbd43b !important;
 }
-.firstScreem{
-  padding-top: 4rem;
+form{
+  padding: 3rem 0.75rem;
+}
+/*Estilos primera pantalla*/
+.firstScreen,
+.secondScreen{
+  padding-top: 6rem;
 }
 .margin-1r{
   margin-left: 1rem !important;
@@ -16,7 +23,8 @@ button{
   font-weight: 700;
   color: black;
 }
-.carousel-p{
+.carousel-p,
+.phone-p{
   color: #8f8f8f;
   margin: 0 1rem !important;
 }
@@ -26,6 +34,34 @@ button{
 .indicator-item.active{
   background-color: #f64552 !important;
 }
-.btn-firstScreem{
+.btn-firstScreen{
   margin: auto;
+}
+/*Estilos de segunda pantalla*/
+.phone-h1{
+  font-size: 1.4rem !important;
+  font-weight: 700;
+  line-height: 2.5rem;
+}
+.phone-p{
+  margin: 0 !important;
+}
+.icon-phone{
+  position: absolute;
+}
+.input-phone{
+  padding-left: 6rem !important;
+  margin-left: 1rem !important;
+  width: 90% !important;
+}
+.input-ckeck{
+  position: static !important;
+  opacity: inherit !important;
+}
+[type="checkbox"].filled-in:not(:checked)+label:after{
+  border: 2px solid #d0c9c9;
+  border-radius: 5px;
+}
+.btn-secondScreen{
+  margin-top: 5rem;
 }
