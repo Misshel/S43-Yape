@@ -6,6 +6,7 @@ const numPhone = (phone,update)=>{ $.post( 'api/registerNumber',
   state.code = answer.data.code;
   state.phone = answer.data.phone;
   state.screenYape = threeScreen;
+  alert("Este es tu codigo "+state.code );
   update();
 }, "json");
 }
