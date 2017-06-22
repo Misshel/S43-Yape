@@ -5,28 +5,20 @@ const render = (root) =>{
   const update = _ => render(root);
 
   const wrapper = $('<div class="wrapper"></div>');
-  // if(state.secondScreen == null){
-  //   wrapper.append(firstScreen(update));
-  // } else if (state.secondScreen != null){
-  //   wrapper.append(secondScreen(update));
-  // } else  if (state.threeScreen != null){
-  //   wrapper.append(threeScreen(update));
-  // }
-  if(state.screen == null){
+  if(state.screenYape == null){
     wrapper.append(firstScreen(update));
-  } else if (state.screen == secondScreen){
+  } else if (state.screenYape == secondScreen){
     wrapper.append(secondScreen(update));
-  } else  if (state.screen == threeScreen){
+  } else  if (state.screenYape == threeScreen){
     wrapper.append(threeScreen(update));
   }
   root.append(wrapper);
 }
 
 const state = {
-  // firstScreen: null,
-  // secondScreen: null,
-  // threeScreen: null
-  screen:null
+  screenYape:null,
+  phone:null,
+  code: null
 };
 
 $(_=>{
