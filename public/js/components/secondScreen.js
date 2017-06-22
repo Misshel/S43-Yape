@@ -1,6 +1,6 @@
 'use strict';
 
-const secondScreen = () =>{
+const secondScreen = (update) =>{
   const container = $('<div class="container-fluid"></div>');
   const row = $('<div class="row secondScreen"></div>');
   const col = $('<div class="col s12"></div>');
@@ -10,8 +10,8 @@ const secondScreen = () =>{
   const form = $('<div class="col s12 center-align"></div>');
   const imgIcon = $('<div class="col s3 icon-phone"><img class="responsive-img" src="img/icons/phoneandnumber.png" alt="celular"></div>');
   const inputPhone = $('<input id="number" class="col s12 input-phone center-align" name="Phone" value="" minlength="9" maxlength="9"  pattern="[0-9]">');
-  const check = $('<input type="checkbox" class="col s2 filled-in" id="filled-in-box"/><label for="filled-in-box">Acepto los <a href="#">Terminos y condiciones</a></label>');
-  const boton = $('<button class="col s4 offset-s4 btn btn-secondScreen" type="button" name="button" disabled ="true">CONTINUAR</button>');
+  const check = $('<input type="checkbox" class="filled-in" id="filled-in-box"/><label for="filled-in-box">Acepto los <a href="#">Terminos y condiciones</a></label>');
+  const boton = $('<button id="button" class="col s4 offset-s4 btn btn-secondScreen disabled" type="button" name="button" >CONTINUAR</button>');
 
   col.append(img);
   col.append(text);
@@ -24,17 +24,22 @@ const secondScreen = () =>{
   row.append(col);
   container.append(row)
   let phone;
-  let click = 0;
-  check.click(_=>{ click++;});
+
   inputPhone.on('keyup',(e) => {
     let numberPhone = inputPhone.val();
-    if( numberPhone != '' & (/^\9\d{8}$/.test(numberPhone) == true) & numberPhone != 987654321 & numberPhone.length ==9 ) {
-      if (click > 0) {
-      let active =  boton[0].removeAttribute("disabled");
-        phone = numberPhone;
-      }
+    if( numberPhone != '' & (/^\9\d{8}$/.test(numberPhone) == true) & numberPhone != 987654321 & numberPhone.length ==9 & $('#filled-in-box').prop('checked')) {
+      phone = numberPhone;
+      $('#button').removeClass("disabled");
+      $('#button').on("click",(e)=>{
+        e.preventDefault();
+      numPhone(numberPhone,update);
+      state.screen = threeScreen;
+      update();
+      });
+    }else {
+      $('#button').addClass("disabled");
     }
-    
-});
+  });
+
   return container;
 }
