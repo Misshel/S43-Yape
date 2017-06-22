@@ -11,6 +11,11 @@ const render = (root) =>{
     wrapper.append(secondScreen(update));
   } else  if (state.screenYape == threeScreen){
     wrapper.append(threeScreen(update));
+  } else if (state.screenYape == fourScreen) {
+    wrapper.append(fourScreen(update));
+  } else if (state.screenYape == fifthScreen) {
+    wrapper.append(fifthScreen(update));
+    setTimeout("location.href=´http://localhost:3000/´", 3000);
   }
   root.append(wrapper);
 }
