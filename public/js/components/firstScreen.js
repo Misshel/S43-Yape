@@ -41,7 +41,7 @@ const firstScreen = (update) =>{
 
   button.on('click',(e) => {
     e.preventDefault();
-    state.secondScreen = secondScreen;
+    state.screenYape = secondScreen;
     update();
   });
 

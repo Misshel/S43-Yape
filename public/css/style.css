@@ -9,7 +9,8 @@ form{
 }
 /*Estilos primera pantalla*/
 .firstScreen,
-.secondScreen{
+.secondScreen,
+.threeScreen{
   padding-top: 6rem;
 }
 .margin-1r{
@@ -64,4 +65,35 @@ form{
 }
 .btn-secondScreen{
   margin-top: 5rem;
+}
+.icon-lock{
+  padding: 0 1.1rem !important;
+  position: relative !important;
+  top: 3rem;
+}
+/*estilos pantalla cuatro*/
+.icon-register{
+  position: relative;
+  top: 3rem;
+}
+.margin-b{
+  margin-bottom: 0 !important;
+  width: 91% !important;
+}
+.padding-1em{
+  padding: 0 1em !important;;
+}
+.margin-t-b{
+  margin: 1.5em 0 !important;
+}
+/*esltilos quinta pantalla*/
+.fondo-good{
+  height: 100vh;
+  padding-top: 50%;
+  background-color: #fbd43b
+}
+.p-good{
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  color: #49233b !important;
 }
